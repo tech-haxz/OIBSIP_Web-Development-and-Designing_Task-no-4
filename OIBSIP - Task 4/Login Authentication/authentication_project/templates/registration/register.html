@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+    <link rel="stylesheet" href="{% static 'styles/register.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <form method="post">
+        {% csrf_token %}
+        <h1>Sign up page</h1>
+        <p>Username: {{ form.username }}</p>
+        <p>email: {{ form.email }}</p>
+        <p>Password: {{ form.password1 }}</p>
+        <p>Confirm Password: {{ form.password2 }}</p>
+        <button type="submit">Sign up</button>
+      </form>
+    </div>
+  </body>
+</html>
